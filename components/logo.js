@@ -17,8 +17,33 @@ const LogoBox = styled.span`
   }
 `
 
-const logo = () => {
-  return <div></div>
+const Logo = () => {
+  const footPrintImg = `/images/MRlogo${useColorModeValue('', '-dark')}.png`
+
+  return (
+    <Link href="/">
+      <a>
+        <LogoBox>
+          <Image
+            src={footPrintImg}
+            // layout="fill"
+            // objectFit="contains"
+            width={30}
+            height={30}
+            alt="logo"
+          />
+          <Text
+            color={useColorModeValue('gray.800', 'whiteAlpha.900')}
+            fontFamily="M Plus Rounded 1c"
+            fontWeight="bold"
+            ml={3}
+          >
+            Matthew Ricio
+          </Text>
+        </LogoBox>
+      </a>
+    </Link>
+  )
 }
 
-export default logo
+export default Logo
