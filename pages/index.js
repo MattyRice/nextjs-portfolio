@@ -42,12 +42,22 @@ const Page = () => {
           </Heading>
           <p>Digital Craftsman ( Artist / Developer / Designer )</p>
           <SocialIcon>
-            <IconButton mr={2}>
-              <FontAwesomeIcon icon={faTwitch} fixedWidth />
-            </IconButton>
-            <IconButton mr={2}>
-              <FontAwesomeIcon icon={faYoutube} fixedWidth />
-            </IconButton>
+            <Link href="https://twitch.com/mattyrice" passHref>
+              <IconButton mr={2}>
+                <FontAwesomeIcon icon={faTwitch} fixedWidth />
+              </IconButton>
+            </Link>
+            <Link
+              href="https://www.youtube.com/channel/UC_BKy_aTjibqcFnqNGOhecQ"
+              passHref
+            >
+              <Link href="https://github.com/MattyRice">
+                <IconButton mr={2}>
+                  <FontAwesomeIcon icon={faYoutube} fixedWidth />
+                </IconButton>
+              </Link>
+            </Link>
+
             <IconButton>
               <FontAwesomeIcon icon={faGithub} fixedWidth />
             </IconButton>
