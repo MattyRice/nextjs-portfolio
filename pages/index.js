@@ -4,12 +4,22 @@ import {
   Heading,
   Image,
   useColorModeValue,
-  Button
+  Button,
+  IconButton
 } from '@chakra-ui/react'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import NextLink from 'next/link'
+import { BioSection, BioYear } from '../components/bio'
+import Link from 'next/link'
+import {
+  faGithub,
+  faTwitch,
+  faYoutube
+} from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { SocialIcon } from '../components/socials'
 
 const Page = () => {
   return (
@@ -31,6 +41,17 @@ const Page = () => {
             Matthew Ricio
           </Heading>
           <p>Digital Craftsman ( Artist / Developer / Designer )</p>
+          <SocialIcon>
+            <IconButton mr={2}>
+              <FontAwesomeIcon icon={faTwitch} fixedWidth />
+            </IconButton>
+            <IconButton mr={2}>
+              <FontAwesomeIcon icon={faYoutube} fixedWidth />
+            </IconButton>
+            <IconButton>
+              <FontAwesomeIcon icon={faGithub} fixedWidth />
+            </IconButton>
+          </SocialIcon>
         </Box>
         <Box
           flexShrink={0}
@@ -68,12 +89,38 @@ const Page = () => {
               My Portfolio
             </Button>
           </NextLink>
-          <NextLink href="/documents/resume.pdf">
+          <NextLink href="/documents/resume.pdf" rel="noopener noreferrer">
             <Button rightIcon={<ChevronRightIcon />} ml={{ base: 5, md: 5 }}>
               My Resume
             </Button>
           </NextLink>
         </Box>
+      </Section>
+      <Section delay={0.2}>
+        <Heading as="h3" variant="section-title">
+          Bio
+        </Heading>
+        <BioSection>
+          <BioYear>1998</BioYear>
+          Born in Libya.
+        </BioSection>
+        <BioSection>
+          <BioYear>2018</BioYear>
+          Started freelance web development for small businesses.
+        </BioSection>
+        <BioSection>
+          <BioYear>2020</BioYear>
+          Completed Bachelors in Computer Science at Rutgers University.
+        </BioSection>
+      </Section>
+      <Section delay={0.3}>
+        <Heading as="h3" variant="section-title">
+          I ♥
+        </Heading>
+        <Paragraph>
+          <Link href="/photography">Photography</Link>, Art, Fashion, Keyboards,
+          and Music
+        </Paragraph>
       </Section>
     </Container>
   )
